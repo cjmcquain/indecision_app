@@ -1,9 +1,13 @@
 console.log("App.js is running");
 
+var app = {
+  title: 'Indecision App',
+  subtitle: 'Best app ever'
+};
 var template = (
   <div>
-    <h1>Indecision App</h1>
-    <p>This is some info.</p>
+    <h1>{app.title}</h1>
+    <p>{app.subtitle}</p>
     <ol>
       <li>Item one</li>
       <li>Item two</li>
@@ -11,14 +15,19 @@ var template = (
   </div>
 );
 
+var user = {
+  name: 'Charles McQuain',
+  age: 31,
+  location: 'Los Angeles, CA'
+};
 var templateTwo = (
   <div>
-    <h1>Charles McQuain</h1>
-    <p>Age: 31</p>
-    <p>Location: Los Angeles</p>
+    <h1>{user.name}</h1>
+    <p>Age: {user.age}</p>
+    <p>Location: {user.location}</p>
   </div>
 );
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);
