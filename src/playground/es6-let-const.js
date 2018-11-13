@@ -1,19 +1,17 @@
-'use strict';
-
 var nameVar = 'Charles';
 var nameVar = 'McQuain';
 console.log('nameVar', nameVar);
 
-var nameLet = 'Bob';
+let nameLet = 'Bob';
 nameLet = 'Julie';
 console.log('nameLet', nameLet);
 
-var nameConst = 'William';
+const nameConst = 'William';
 console.log('nameCost', nameConst);
 
 // Block Scoping
 var fullName = 'Charles McQuain';
-var firstName = void 0;
+let firstName;
 
 if (fullName) {
   firstName = fullName.split(' ')[0];
