@@ -1,23 +1,80 @@
 'use strict';
 
-var nameVar = 'Charles';
-var nameVar = 'McQuain';
-console.log('nameVar', nameVar);
+console.log("App.js is running");
 
-var nameLet = 'Bob';
-nameLet = 'Julie';
-console.log('nameLet', nameLet);
+var app = {
+  title: 'Indecision App',
+  subtitle: 'Best app ever',
+  options: ['Item one', 'Item two']
+};
+var template = React.createElement(
+  'div',
+  null,
+  React.createElement(
+    'h1',
+    null,
+    app.title
+  ),
+  app.subtitle && React.createElement(
+    'p',
+    null,
+    app.subtitle
+  ),
+  React.createElement(
+    'p',
+    null,
+    app.options.length > 0 ? 'Here are your options' : 'No options'
+  ),
+  React.createElement(
+    'ol',
+    null,
+    React.createElement(
+      'li',
+      null,
+      'Item one'
+    ),
+    React.createElement(
+      'li',
+      null,
+      'Item two'
+    )
+  )
+);
 
-var nameConst = 'William';
-console.log('nameCost', nameConst);
+var user = {
+  name: 'Charles McQuain',
+  age: 31,
+  location: 'Los Angeles, CA'
+};
 
-// Block Scoping
-var fullName = 'Charles McQuain';
-var firstName = void 0;
-
-if (fullName) {
-  firstName = fullName.split(' ')[0];
-  console.log(firstName);
+function getLocation(location) {
+  if (location) {
+    return React.createElement(
+      'p',
+      null,
+      'Location: ',
+      location
+    );
+  }
 }
 
-console.log(firstName);
+var templateTwo = React.createElement(
+  'div',
+  null,
+  React.createElement(
+    'h1',
+    null,
+    user.name ? user.name : 'Anonymous'
+  ),
+  user.age && user.age >= 18 && React.createElement(
+    'p',
+    null,
+    ' Age: ',
+    user.age
+  ),
+  getLocation(user.location)
+);
+
+var appRoot = document.getElementById('app');
+
+ReactDOM.render(template, appRoot);
