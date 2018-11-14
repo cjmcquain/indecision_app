@@ -1,6 +1,6 @@
 console.log("App.js is running");
 
-const app = {
+/* const app = {
   title: 'Indecision App',
   subtitle: 'Best app ever',
   options: ['Item one', 'Item two']
@@ -16,27 +16,19 @@ const template = (
     </ol>
   </div>
 );
+*/
 
-const user = {
-  name: 'Charles McQuain',
-  age: 31,
-  location: 'Los Angeles, CA'
-};
-
-function getLocation(location) {
-  if (location) {
-    return <p>Location: {location}</p>;
-  }
+let count = 0;
+const addOne = () => {
+  console.log('addOne');
 }
-
 const templateTwo = (
   <div>
-    <h1>{user.name ? user.name : 'Anonymous'}</h1>
-    {(user.age && user.age >= 18) && < p > Age: {user.age}</p>}
-    {getLocation(user.location)}
-  </div >
+    <h1>Count: {count} </h1>
+    <button onClick={addOne}>+1</button>
+  </div>
 );
 
 const appRoot = document.getElementById('app');
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot); 

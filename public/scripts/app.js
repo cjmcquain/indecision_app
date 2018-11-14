@@ -1,29 +1,46 @@
-const add = (a, b) => {
-  return a + b;
+'use strict';
+
+console.log("App.js is running");
+
+/* const app = {
+  title: 'Indecision App',
+  subtitle: 'Best app ever',
+  options: ['Item one', 'Item two']
 };
-console.log(add(55, 1));
+const template = (
+  <div>
+    <h1>{app.title}</h1>
+    {(app.subtitle) && <p>{app.subtitle}</p>}
+    <p>{app.options.length > 0 ? 'Here are your options' : 'No options'}</p>
+    <ol>
+      <li>Item one</li>
+      <li>Item two</li>
+    </ol>
+  </div>
+);
+*/
 
-const user = {
-  name: 'Charles',
-  cities: ['New York', 'Los Angeles', 'Dublin'],
-  printPlacesLived() {
-    const cityMessages = this.cities.map(city => {
-      return this.name + ' has lived in ' + city;
-    });
-    return cityMessages;
-  }
+var count = 0;
+var addOne = function addOne() {
+  console.log('addOne');
 };
+var templateTwo = React.createElement(
+  'div',
+  null,
+  React.createElement(
+    'h1',
+    null,
+    'Count: ',
+    count,
+    ' '
+  ),
+  React.createElement(
+    'button',
+    { onClick: addOne },
+    '+1'
+  )
+);
 
-console.log(user.printPlacesLived());
+var appRoot = document.getElementById('app');
 
-// Challenge Area
-
-const multiplier = {
-  numbers: [1, 2, 3, 4, 5],
-  multiplyBy: 5,
-  multiply() {
-    return this.numbers.map(number => number * this.multiplyBy);
-  }
-};
-
-console.log(multiplier.multiply());
+ReactDOM.render(templateTwo, appRoot);
