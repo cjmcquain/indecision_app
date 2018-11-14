@@ -7,7 +7,7 @@ const user = {
   name: 'Charles',
   cities: ['New York', 'Los Angeles', 'Dublin'],
   printPlacesLived() {
-    const cityMessages = this.cities.map(city => {
+    const cityMessages = this.cities.map((city) => {
       return this.name + ' has lived in ' + city;
     });
     return cityMessages;
@@ -22,8 +22,8 @@ const multiplier = {
   numbers: [1, 2, 3, 4, 5],
   multiplyBy: 5,
   multiply() {
-    return this.numbers.map(number => number * this.multiplyBy);
+    return this.numbers.map((number) => number * this.multiplyBy);
   }
-};
+}
 
 console.log(multiplier.multiply());
