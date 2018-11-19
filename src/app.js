@@ -6,6 +6,11 @@ const app = {
   options: ['One', 'Two']
 };
 
+const onFormSubmit = (e) => {
+  e.preventDefault();
+  console.log('Form submitted!');
+};
+
 const template = (
   <div>
     <h1>{app.title}</h1>
@@ -15,6 +20,10 @@ const template = (
       <li>Item one</li>
       <li>Item two</li>
     </ol>
+    <form onSubmit={onFormSubmit}>
+      <input type="text" name="option" />
+      <button>Add Option</button>
+    </form>
   </div>
 )
 
